@@ -487,6 +487,23 @@
             ''^tests/unit/libutil/xml-writer\.cc''
           ];
         };
+        flawfinder = {
+            enable = true;
+            name = "Flawfinder";
+            package = pkgs.flawfinder;
+
+            entry = "flawfinder";
+            args = [
+              # Don't display status information (i.e., which files are being
+              # examined) while the analysis is going on.
+              "--quiet"
+              # Return a nonzero (false) error code if there is at least one
+              # hit of LEVEL or higher.
+              "--error-level=1"
+            ];
+            files = "\\.(cc|hh)$";
+            excludes = ["^tests/"];
+        };
         shellcheck = {
           enable = true;
           excludes = [

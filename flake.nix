@@ -361,6 +361,7 @@
               pkgs.buildPackages.mesonEmulatorHook
             ++ [
               pkgs.buildPackages.cmake
+              pkgs.buildPackages.flawfinder
               pkgs.buildPackages.shellcheck
               pkgs.buildPackages.changelog-d
               modular.pre-commit.settings.package
